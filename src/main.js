@@ -13,16 +13,7 @@ docReady(function () {
   var lastResult,
     countResults = 0;
 
-  var html5QrcodeScanner = new Html5QrcodeScanner('qr-reader', {
-    fps: 10,
-    qrbox: 200,
-    experimentalFeatures: {
-      useBarCodeDetectorIfSupported: true,
-    },
-    rememberLastUsedCamera: true,
-    supportedScanTypes: [Html5QrcodeScanType.SCAN_TYPE_FILE, Html5QrcodeScanType.SCAN_TYPE_CAMERA],
-    aspectRatio: 1.7777778,
-  });
+  var html5QrcodeScanner = new Html5QrcodeScanner('qr-reader', { fps: 10, qrbox: 250 });
 
   function onScanSuccess(decodedText, decodedResult) {
     if (decodedText !== lastResult) {

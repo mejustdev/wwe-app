@@ -2,14 +2,17 @@
   "name": "wwe-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "html5-qrcode": "^2.3.8"
+  "dependencies": {
+    "html5-qrcode": "^2.3.8",
+    "vite": "^5.0.10"
   }
 }
