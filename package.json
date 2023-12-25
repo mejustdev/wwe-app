@@ -14,5 +14,6 @@
   "dependencies": {
     "html5-qrcode": "^2.3.8",
     "vite": "^5.0.10"
-  }
+  },
+  "type": "module"
 }
