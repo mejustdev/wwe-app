@@ -1,0 +1,33 @@
+{
+  "count": 1002,
+  "products": [
+    {
+      "id": 137741,
+      "title": "Coca-Cola Zero sugar",
+      "brand": "Coca-Cola",
+      "category": "Frisdrank, sappen, koffie, thee/Cola light & suikervrije flessen",
+      "gtins": [
+        5000112646702,
+        8710198393953
+      ],
+      "link": "/producten/product/wi137741/coca-cola-zero-sugar",
+      "properties": [
+        "Vegan"
+      ]
+    },
+    {
+      "id": 568330,
+      "title": "Red Bull Energy drink abrikoos-aardbei tray",
+      "brand": "Red Bull",
+      "category": "Frisdrank, sappen, koffie, thee/Energy drinks",
+      "gtins": [
+        8710198393953,
+        9002490263959
+      ],
+      "link": "/producten/product/wi568330/red-bull-energy-drink-abrikoos-aardbei-tray",
+      "properties": [
+        "Vegan"
+      ]
+    }
+  ]
+}

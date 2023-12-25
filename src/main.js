@@ -1,14 +1,20 @@
-function docReady(fn) {
-  // see if DOM is already available
-  if (document.readyState === 'complete' || document.readyState === 'interactive') {
-    // call on next available tick
-    setTimeout(fn, 1);
-  } else {
-    document.addEventListener('DOMContentLoaded', fn);
-  }
-}
+// main.js
 
-docReady(function () {
+import { fetchJsonData, findProductsByGtin } from './util/jsonUtils';
+
+// Assuming you have loaded the JSON data into a variable named jsonData
+// For simplicity, you can load it using the fetchJsonData function
+
+// Wait for JSON data to be fetched before proceeding
+fetchJsonData().then((jsonData) => {
+  if (jsonData) {
+    initScanner(jsonData); // Pass the JSON data to your scanner initialization function
+  } else {
+    console.error('Failed to load JSON data.');
+  }
+});
+
+function initScanner(jsonData) {
   var resultContainer = document.getElementById('qr-reader-results');
   var lastResult,
     countResults = 0;
@@ -21,9 +27,17 @@ docReady(function () {
       lastResult = decodedText;
       console.log(`Scan result = ${decodedText}`, decodedResult);
 
-      resultContainer.innerHTML += `<div>[${countResults}] - ${decodedText}</div>`;
+      // Check if decodedText matches any gtins
+      const matchingProducts = findProductsByGtin(decodedText, jsonData);
 
-      // Optional: To close the QR code scannign after the result is found
+      if (matchingProducts) {
+        console.log('Matching Products:', matchingProducts);
+        resultContainer.innerHTML += `<div>[${countResults}] - ${matchingProducts.map(product => product.title).join(', ')}</div>`;
+      } else {
+        resultContainer.innerHTML += `<div>[${countResults}] - No matching product found</div>`;
+      }
+
+      // Optional: To close the QR code scanning after the result is found
       html5QrcodeScanner.clear();
     }
   }
@@ -35,4 +49,6 @@ docReady(function () {
   }
 
   html5QrcodeScanner.render(onScanSuccess, onScanError);
-});
+}
+
+// ... (rest of your code)
