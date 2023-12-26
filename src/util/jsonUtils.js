@@ -1,9 +1,7 @@
-// jsonUtils.js
-
 // Function to fetch JSON data asynchronously
 export async function fetchJsonData() {
   try {
-    const response = await fetch('src/data/ah.json'); // Update the path accordingly
+    const response = await fetch('../src/data/ah.json'); // Update the path accordingly
     const jsonData = await response.json();
     return jsonData;
   } catch (error) {

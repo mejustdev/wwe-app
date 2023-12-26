@@ -1,8 +1,14 @@
 import { defineConfig } from 'vite';
-// https://vitejs.dev/config/
+import path from 'path';
+
 export default defineConfig({
   optimizeDeps: {
     include: ['linked-dep'],
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
   },
   build: {
     outDir: 'dist',

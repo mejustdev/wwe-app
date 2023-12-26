@@ -1,6 +1,6 @@
 // main.js
 
-import { fetchJsonData, findProductsByGtin } from './util/jsonUtils';
+import { fetchJsonData, findProductsByGtin } from '@/util/jsonUtils';
 
 // Assuming you have loaded the JSON data into a variable named jsonData
 // For simplicity, you can load it using the fetchJsonData function

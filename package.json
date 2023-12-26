@@ -5,7 +5,7 @@
   "main": "dist/main.js",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --watch",
     "serve": "vite preview"
   },
   "keywords": [],
